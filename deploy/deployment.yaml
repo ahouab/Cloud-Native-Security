@@ -19,7 +19,7 @@ spec:
         - name: REPOS
           value: "100daysofkubernetes/100DaysOfKubernetes"
         - name: GITHUB_TOKEN
-          value: "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"
+          value: "test"
         ports:
           - containerPort: 9171
         imagePullPolicy: Always
