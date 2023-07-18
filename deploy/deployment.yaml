@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  gh-exporter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run:  gh-exporter
+  template:
+    metadata:
+      labels:
+        run:  gh-exporter
+    spec:
+      containers:
+      - name: gh-exporter
+        image: docker.io/anaisurlichs/gh-exporter:0.0.1
+        env:
+        - name: REPOS
+          value: "100daysofkubernetes/100DaysOfKubernetes"
+        - name: GITHUB_TOKEN
+          value: "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"
+        ports:
+          - containerPort: 9171
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: 512Mi
+            cpu: 200m
+        securityContext:
+          allowPrivilegeEscalation: false
