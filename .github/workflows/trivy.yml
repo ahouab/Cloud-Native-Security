@@ -1,4 +1,4 @@
-name: Create Cluster
+name: Trivy
 on:
   push:
     branches:
