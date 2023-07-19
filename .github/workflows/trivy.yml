@@ -15,7 +15,6 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'
-          scan-ref: './' 
           hide-progress: false
           format: 'sarif'
           output: 'trivy-results.sarif'
