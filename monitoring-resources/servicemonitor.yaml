@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: gh-exporter
+  labels:
+    run: gh-exporter
+spec:
+  endpoints:
+  - port: http
+    path: /metrics
+    scrapeTimeout: 90s
+  selector:
+    matchLabels:
+      run: gh-exporter

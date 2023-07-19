@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gh-exporter
+  labels:
+    run: gh-exporter
+spec:
+  type: ClusterIP
+  ports:
+  - port: 9171
+    targetPort: 9171
+    protocol: TCP
+    name: http
+  selector:
+    run: gh-exporter
